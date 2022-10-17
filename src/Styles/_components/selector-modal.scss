@@ -1,0 +1,92 @@
+@use '../_abstract/vars';
+@import '../_layout/selector-modal.scss';
+
+.selector-modal {
+    @extend %absolute-right;
+    @extend %selector-modal;
+    background-color: whitesmoke;
+    
+    .selector-modal-title-wrapper {
+        @extend %selector-modal-title-wrapper;
+        
+        .selector-modal-title{
+            @extend %selector-modal-title;
+        }
+    }
+
+    .list-container {
+        @extend %list-container;
+    }
+}
+
+.date {
+    @extend %date;
+
+    .left{
+        transform: rotate(90deg);
+        cursor: pointer;
+    }
+
+    .right{
+        transform: rotate(-90deg);
+        cursor: pointer;
+    }
+
+    .date-month-header {
+        height: 8%;
+        padding-bottom: 8%;
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+            display: inline;
+        }
+    }
+
+    .date-num {
+        background-color: grey;
+        text-align: center;
+    }
+
+    .date-num-container {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 7% repeat(6, 1fr);
+        gap: 1px;
+
+        background-color: white;
+        height: 88%;
+    }
+
+    .selected{
+        background-color: vars.$primary-light;
+    }
+
+    .previous {
+        background-color: vars.$primary;
+    }
+
+    .current {
+        background-color: vars.$grey-light;
+    }
+
+    .date-span {
+        border-radius: 2px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: vars.$grey;
+
+        transition-property: background-color;
+        transition-duration: 400ms;
+        transition-delay: 5ms;
+    }
+
+    .current:hover{
+        background-color: vars.$grey-dark;
+    }
+
+    .week-day {
+        background-color: whitesmoke;
+        text-align: center;
+    }
+}

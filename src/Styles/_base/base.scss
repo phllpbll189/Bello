@@ -1,0 +1,28 @@
+@use '../_abstract/vars';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body, #root{
+    height: 100%;
+    background-color: vars.$grey-dark;
+    overflow: hidden;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    background-color: vars.$grey-dark;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+

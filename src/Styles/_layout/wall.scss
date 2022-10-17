@@ -1,0 +1,125 @@
+//layouts for the wall component
+//NOTE: ALL IMPORTED INTO ../_layout/wall
+@use "../_abstract/vars.scss";
+
+%project-view-container {
+    margin-left: vars.$left-bar-size;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    max-height: 100%;
+    min-height: 100%;
+}
+
+%project-container { 
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    max-height: 91%;
+    overflow-y: hidden;
+    padding: 10px;
+    flex: 1 1 auto;
+    
+}
+
+%board-selectors {
+    position: absolute;
+    top: 5%;
+    left: 0px;
+    box-shadow: 4px 0px 4px rgb(0 0 0 / 25%);
+    z-index: 0;
+
+    min-width: vars.$left-bar-size; 
+    height: 100%; 
+    padding: 8px; 
+    
+    #selector-header{
+        margin-bottom: 20px;
+    }
+    
+    button{
+        display: block;
+        margin-bottom: 7px;
+    }
+}
+
+%board-container{
+    max-height: 100%; 
+
+    display: flex; 
+    flex-direction: column; 
+    min-width: 500px; 
+    max-width: 500px; 
+}
+
+%board-head {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 40px; 
+
+    border-radius: 5px 5px 0px 0px; 
+    
+    * {
+        margin: 0; 
+        text-justify: center; 
+    }
+}
+
+%card-container{ 
+    //sizing
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1; 
+    width: 100%; 
+    gap: 15px; 
+
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+%card {
+    @extend %radius-border;
+    
+    display: flex; 
+    min-height: fit-content; 
+
+    //styles for card contents
+    .card-description{
+        display: flex; 
+        flex-direction: column; 
+        flex-grow: 1; 
+    }
+
+    .last-card-info{
+        padding-top: 15px;
+        width: 100%;
+       p {
+        display: inline;
+       }
+
+       p:last-child {
+        width: fit-content;
+        margin-left: auto;
+       }
+    }
+
+    p {
+        text-align: center; 
+        padding-top: 10px; 
+        padding-right: 10px; 
+        text-overflow: ellipsis;
+        overflow:hidden;
+        max-height: 100px;
+    }
+
+    p:last-child{
+        text-align: right; 
+    }
+
+    .arrow{
+        height: 13px; 
+        align-self: center;
+        z-index: 0;
+    }
+}

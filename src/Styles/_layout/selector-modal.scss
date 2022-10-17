@@ -1,0 +1,55 @@
+@use '../_abstract/vars';
+
+$width: 200px;
+$modal-gap: 10px;
+
+%absolute-right {
+    position: absolute;
+    border-radius: 5px;
+    right: -1 * ($width + $modal-gap);
+    top: 25%;
+
+    min-height: 25%;
+    max-height: 50%;
+    min-width: $width;
+    max-width: $width;
+
+    padding: 10px;
+}
+
+%date {
+    height: 220px;
+    $width: 200px;
+    
+    right: -1 * ($width + 10px);
+    
+    min-width: $width;
+    max-width: $width;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+}
+
+%selector-modal{
+    max-height: 50%;
+    overflow-y: scroll;
+}
+
+%selector-modal-title-wrapper {
+    height: 5%;
+    padding: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: vars.$grey;
+    border-bottom-width: 1px;
+}
+
+%selector-modal-title {
+    text-align: center;
+}
+
+%list-container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

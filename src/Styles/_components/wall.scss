@@ -1,0 +1,100 @@
+@use '../_abstract/vars';
+@use '../_abstract/mixins';
+
+@import '../_layout/navbar';
+@import '../_layout/wall';
+
+.project-view-container {
+    @extend %project-view-container;
+
+    ::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: vars.$primary;
+        border-radius: 5px;
+    }
+}
+
+.project-container{
+    @extend %project-container;
+    scrollbar-width: thin;
+}
+
+//Boards
+.board-selectors {
+    @extend %board-selectors;
+    background-color: vars.$light;
+    border-right: 2px vars.$dark;
+    
+    button {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    
+    #selector-header{
+        border-bottom: vars.$dark;
+        border-bottom-style: solid;
+        border-width: 1px;
+
+        color: vars.$dark;
+        width: 95%;
+        text-align: center;
+    }
+
+    .active{
+        @include mixins.active-inactive($active: true, $active-color: vars.$primary);
+    }
+
+    .inactive{
+        @include mixins.active-inactive($active: false, $inactive-color: vars.$dark); 
+        cursor: pointer;
+    }
+}
+
+//styles for the boards
+.board-container{
+    @extend %board-container;
+    @extend %radius-border;
+    background-color: vars.$light;
+}
+
+.board-head {
+    @extend %board-head;
+    * {
+        color: vars.$light;
+    }
+}
+
+.card-container {
+    @extend %card-container;
+
+}
+
+//styles for the cards
+.card {
+    @extend %card;
+    background-color: vars.$light;
+    color: vars.$inactive;
+
+    .card-title{
+        color: vars.$primary;
+        font-weight: 700;
+    }
+
+    p:last-child{
+        color: black;
+        font-size: 14px; 
+    }
+
+    .left {
+        transform: rotate(90deg);
+        cursor: pointer;
+    }
+
+    .right{
+        transform: rotate(-90deg);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,37 @@
+//Component File for the navbar
+@use '../_abstract/vars';
+@import '../_layout/navbar';
+
+.navbar {
+    @extend %top;
+    background: linear-gradient(315DEG, #00CCD6 0%, #4F40FB 100%);
+    * {
+        color: vars.$grey-light;
+    }
+}    
+    
+.left-aligned {
+    @extend %left;
+}
+
+.right-aligned {
+    @extend %right;
+    height: 100%;
+}
+
+.logo-name, .title {
+    @extend %row-gap;
+    height: 100%;
+    cursor: pointer;
+}
+
+#navbar-logo {
+    height: 70%;
+    cursor: pointer;
+}
+
+.dropdown-triangle {
+    max-height: 20%;
+    cursor: pointer;
+}
+

@@ -1,0 +1,18 @@
+@use '../_abstract/vars';
+@import '../_layout/menu-modal.scss';
+
+.menu-modal{
+    @extend %menu-modal;
+
+    background-color: rgba(0, 0, 0, 0.191);
+
+    .modal-content {
+        color: vars.$dark;
+
+        .dot {
+            background-color: vars.$primary-dark;
+            color: white;
+        }
+    }
+}
+

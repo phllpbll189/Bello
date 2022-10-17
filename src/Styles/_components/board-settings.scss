@@ -1,0 +1,48 @@
+@use '../_abstract/vars';
+@import '../_abstract/mixins';
+@import '../_layout/board-settings.scss';
+
+#board-settings {
+    @extend %board-settings;
+
+    background-color: white;
+    border-bottom: 2px solid lightgrey;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+
+    button {
+        @extend %radius-border;
+        @extend %setting-button;
+
+        cursor: pointer;
+        border-color: transparent;
+        transition: .5s;
+    }
+
+    button:hover {
+        *{
+            color: vars.$light;
+        }
+
+        background-color: vars.$primary;
+        border-color: vars.$inactive;
+
+        .changing-plus-sign{
+            filter: grayscale(100%) invert(100%);
+        }
+    }
+
+    .active{
+        @include active-inactive($active: true);
+    }
+
+    .inactive{
+        @include active-inactive($active: false);
+    }
+
+    .button-image{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 100%;
+    }
+}

@@ -1,0 +1,37 @@
+@use "../_abstract/vars";
+
+%top {
+    height: 5%;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+%navAlignment{
+    align-self: center;
+    width: 10%;
+}
+
+%left {
+    @extend %navAlignment;
+
+    margin-right: auto;
+}
+
+%right {
+    @extend %navAlignment;
+
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+%row-gap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
